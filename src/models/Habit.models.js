@@ -7,7 +7,7 @@ export default class Habit{
             method  : "POST",
             headers : {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${this.token}`
             },
             body: JSON.stringify(habito)
         })
@@ -20,7 +20,7 @@ export default class Habit{
         return await fetch(this.urlBase, {
             method: "GET",
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${this.token}`
             }
         })
         .then(res => res.json())
@@ -29,10 +29,10 @@ export default class Habit{
     }
 
     static async listarHabitosXcategoria(categoria){
-        return await fetch(`${this.urlBase}/category/:habit_${categoria}`, {
+        return await fetch(`${this.urlBase}/category/${categoria}`, {
             method: "GET",
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${this.token}`
             }
         })
         .then(res => res.json())
@@ -41,11 +41,11 @@ export default class Habit{
     }
 
     static async atualizarHabito(id, habitoAtualizado){
-        return await fetch(`${this.urlBase}/complete/:habit_${id}`,{
+        return await fetch(`${this.urlBase}${id}`,{
             method: "PATCH",
             headers: {
                 "Content-Type"  : "application/json",
-                Authorization   : `Bearer ${token}`
+                Authorization   : `Bearer ${this.token}`
             },
             body: JSON.stringify(habitoAtualizado)
         })
@@ -55,10 +55,10 @@ export default class Habit{
     }
 
     static async completarHabito(id){
-        return await fetch(`${this.urlBase}/complete/:habit_${id}`,{
+        return await fetch(`${this.urlBase}/complete/${id}`,{
             method: "PATCH",
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${this.token}`
             }
         })
         .then(res => res.json())
@@ -67,10 +67,10 @@ export default class Habit{
     }
 
     static async deleteHabito(id){
-        return await fetch(`${this.urlBase}/complete/:habit_${id}`,{
+        return await fetch(`${this.urlBase}/complete/${id}`,{
             method: "DELETE",
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${this.token}`
             }
         })
         .then(res => res.json())
