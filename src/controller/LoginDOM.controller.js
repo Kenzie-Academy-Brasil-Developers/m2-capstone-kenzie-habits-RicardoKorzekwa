@@ -25,12 +25,17 @@ class CriandoDOMLogin{
         const sectionForm = document.createElement("section")
         const form        = document.createElement("form")
         const loginTitulo = document.createElement("h1")
+        const labelEmail  = document.createElement("label")
         const inputEmail  = document.createElement("input")
         const inputSenha  = document.createElement("input")
+        const labelSenha  = document.createElement("label")
         const button      = document.createElement("button")
 
+        labelEmail.insertAdjacentHTML("afterbegin", "E-mail")
+        labelSenha.insertAdjacentHTML("afterbegin", "Senha")
+
         inputEmail.required = true
-        inputEmail.type="email"
+        inputEmail.type= "email"
 
         inputSenha.type = "password"
         inputSenha.required = true
@@ -47,7 +52,7 @@ class CriandoDOMLogin{
         loginTitulo.insertAdjacentHTML("afterbegin", "Login")
         button.insertAdjacentHTML("afterbegin", "Entrar")
 
-        form.append(inputEmail, inputSenha, button)
+        form.append(labelEmail,inputEmail,labelSenha, inputSenha, button)
         sectionForm.append(loginTitulo, form)
         this.div.append(sectionTitulo, sectionForm)
 

@@ -89,6 +89,12 @@ form{
     font-size: large;
     transition: 1s;
 }
+label{
+    width: 100%;
+    font: var(--Text-3-400);
+    margin-top: 1rem;
+    font-weight: bold;
+}
 
 @media(min-width:600px) {
     .boxLogin{
