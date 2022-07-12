@@ -67,7 +67,7 @@ export default class Habit{
     }
 
     static async deleteHabito(id){
-        return await fetch(`${this.urlBase}/complete/${id}`,{
+        return await fetch(`${this.urlBase}/${id}`,{
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${this.token}`
