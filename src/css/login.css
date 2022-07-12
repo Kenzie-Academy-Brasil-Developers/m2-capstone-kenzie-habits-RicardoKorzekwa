@@ -1,0 +1,241 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.boxLogin{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    border-radius: 2%;
+    box-shadow: 0px 0px 10px 2px rgb(183, 181, 181);
+}
+.sectionTitulo{
+    background-color: var(--brand-2);
+    width: 100%;
+    border-radius: 2% 2% 0 0;
+    padding: 1rem;
+}
+
+.loginTitulo{
+    font: var(--Title-2);
+    color: white;
+}
+.loginDescricao{
+    font: var(--Text-2-500);
+    color: var(--brand-3);
+}
+.sectionForm{
+    padding: 1rem;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.tituloForm{
+        font: var(--Title-3);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-around;
+    width: 80%;
+    height: 90%;
+}
+.inputEmail{
+    height: 10%;
+    border: none;
+    background-color: var(--grey-4) ;
+    border-radius: 3%;
+    padding: 1rem;
+}
+.inputEmail:focus{
+    background-color: var(--grey-3);
+}
+.inputEmail:invalid{
+    border: 3px solid red;
+}
+.inputSenha{
+    height: 10%;
+    border: none;
+    background-color: var(--grey-4) ;
+    border-radius: 3%;
+    padding: 1rem;
+}
+.inputSenha:focus{
+    background-color: var(--grey-3);
+}
+
+.buttonForm{
+    height: 20%;
+    border: none;
+    background-color:var(--brand-1);
+    color: var(--brand-3);
+    border-radius: 3%;
+    font-size: medium;
+}
+.buttonForm:hover{
+    border: 3px solid var(--brand-1) ;
+    color: var(--brand-1);
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    transition: 1s;
+}
+label{
+    width: 100%;
+    font: var(--Text-3-400);
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+@media(min-width:600px) {
+    .boxLogin{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 60%;
+        border-radius: 2%;
+        box-shadow: 0px 0px 10px 2px rgb(183, 181, 181);
+    }
+    .sectionTitulo{
+        background-color: var(--brand-2);
+        width: 50%;
+        border-radius: 2% 0 0 2%;
+        padding: 5rem;
+    }
+    .loginTitulo{
+        font: var(--Title-3);
+        color: white;
+        margin-bottom: 2rem;
+    }
+    .loginDescricao{
+        font: var(--Text-2-500);
+        color: var(--brand-3);
+    }
+    
+    .sectionForm{
+        padding: 5rem;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-around;
+        width: 100%;
+        height: 90%;
+    }
+    .inputEmail{
+        height: 5%;
+        border: none;
+        background-color: var(--grey-4) ;
+        border-radius: 3%;
+        padding: 1rem;
+    }
+    .inputSenha{
+
+            height: 5%;
+            border: none;
+            background-color: var(--grey-4) ;
+            border-radius: 3%;
+            padding: 1rem;
+    }
+    .buttonForm{
+        height: 20%;
+        border: none;
+        background-color:var(--brand-1);
+        color: var(--brand-3);
+        border-radius: 3%;
+        font-size: small;
+    }
+    .tituloForm{
+        font: var(--Title-3);
+    }
+
+@media(min-width:1000px) {
+    .boxLogin{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 60%;
+        border-radius: 2%;
+        box-shadow: 0px 0px 10px 2px rgb(183, 181, 181);
+    }
+    .sectionTitulo{
+        background-color: var(--brand-2);
+        width: 50%;
+        border-radius: 2% 0 0 2%;
+        padding: 10rem;
+    }
+    .loginTitulo{
+        font: var(--Title-1);
+        color: white;
+        margin-bottom: 2rem;
+    }
+    .loginDescricao{
+        font: var(--Text-1-500);
+        color: var(--brand-3);
+    }
+    
+    .sectionForm{
+        padding: 5rem;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-around;
+        width: 100%;
+        height: 70%;
+    }
+    .inputEmail{
+        height: 7%;
+        border: none;
+        background-color: var(--grey-4) ;
+        border-radius: 3%;
+        padding: 1rem;
+    }
+    .inputSenha{
+        height: 7%;
+        border: none;
+        background-color: var(--grey-4) ;
+        border-radius: 3%;
+        padding: 1rem;
+    }
+    .buttonForm{
+        height: 20%;
+        border: none;
+        background-color:var(--brand-1);
+        color: var(--brand-3);
+        border-radius: 3%;
+        font-size: large;
+    }
+    .tituloForm{
+        font: var(--Title-3);
+    }
+
+}
+
+}
