@@ -1,0 +1,56 @@
+/* Variaveis do projeto */
+
+:root{
+
+    /* Guia de Estilos */
+
+    /* Estilos de fontes */
+    --font-Inter: 'Inter', sans-serif;
+
+    /* Estilos de Texto */
+        
+        /* Text Styles */
+        --Title-1: normal 600 40px var(--font-Inter);
+        --Title-2: normal 600 28px var(--font-Inter);
+        --Title-3: normal 600 24px var(--font-Inter);
+        --Title-4: normal 600 20px var(--font-Inter);
+        --Title-5: normal 600 16px var(--font-Inter);
+
+        --Text-1-500: normal 500 18px var(--font-Inter);
+        --Text-1-400: normal 400 18px var(--font-Inter);
+
+        --Text-2-500: normal 500 16px var(--font-Inter);
+        --Text-2-400: normal 400 16px var(--font-Inter);
+
+        --Text-3-500: normal 500 14px var(--font-Inter);
+        --Text-3-400: normal 400 14px var(--font-Inter);
+    
+    /* Estilos de Cores */
+
+        /* Paleta Brand */
+        --brand-1: rgb(65, 90, 243);
+        --brand-2: rgb(65, 80, 210);
+        --brand-3: rgb(215, 228, 251);
+
+        /* Peleta de Tons de cinza */
+        --grey-1: rgb(33, 37, 41);
+        --grey-2: rgb(52, 58, 64);
+        --grey-3: rgb(173, 181, 189);
+        --grey-4: rgb(233, 236, 239);
+        --grey-5: rgb(241, 243, 245);
+        --grey-6: rgb(248, 249, 250);
+
+        /* Paleta de feedBack */
+        --sucess: rgb(86, 207, 142);
+        --error-1: rgb(230, 68, 69);
+        --error-2: rgb(240, 56, 57);
+
+        /* Cores extras */
+        --branco: rgb(250, 250, 250)
+
+}
+
+
+
+
+
