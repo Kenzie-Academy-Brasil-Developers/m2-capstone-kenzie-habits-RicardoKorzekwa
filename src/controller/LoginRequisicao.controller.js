@@ -3,6 +3,7 @@ class RequisicaoLogin{
     static url = "https://habits-kenzie.herokuapp.com/api/userLogin"
 
     static async login(loginData){
+        console.log(loginData)
         const response = await fetch(this.url,{
             method: "POST",
             headers: {
@@ -12,12 +13,18 @@ class RequisicaoLogin{
         })
         .then(res => res.json())
         .then(res => {
-            window.localStorage.setItem("@kenzieHabit-username", res.response.usr_name)
-            window.localStorage.setItem("@kenzieHabit-email", res.response.usr_email)
-            window.localStorage.setItem("@kenzieHabit-image", res.response.usr_image)
-            window.localStorage.setItem("@kenzieHabit-token", res.token)
-        })
-        .catch(err => CriandoDOMLogin.modalErro())
+            if(res.token !== undefined){
+                window.localStorage.setItem("@kenzieHabit-username", res.response.usr_name)
+                window.localStorage.setItem("@kenzieHabit-email", res.response.usr_email)
+                window.localStorage.setItem("@kenzieHabit-image", res.response.usr_image)
+                window.localStorage.setItem("@kenzieHabit-token", res.token)
+                window.location.href = "src/views/homepage.html";
+            }else{
+                CriandoDOMLogin.modalErro(res.message)
+            }
+            
+            return res
+        }) 
         return response
     }
     static logout(){

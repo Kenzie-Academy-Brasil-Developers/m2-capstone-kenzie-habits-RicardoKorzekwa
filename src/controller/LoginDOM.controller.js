@@ -56,23 +56,17 @@ class CriandoDOMLogin{
         sectionForm.append(loginTitulo, form)
         this.div.append(sectionTitulo, sectionForm)
 
-       form.addEventListener("submit", async(event)=>{
+       form.addEventListener("submit", async (event)=>{
         event.preventDefault()
         const loginData = {
             email: inputEmail.value,
             password: inputSenha.value
         }
-       await RequisicaoLogin.login(loginData)
-      /*  .then(res => res.response.usr_name)
-       .then(res=>{ if(res !== undefined){
-        location.href = N//homepage
-
-       }}) */
-       window.location.href = "src/views/homepage.html";
+        RequisicaoLogin.login(loginData)
        })
     }
     
-    static modalErro(){
+    static modalErro(info){
         const divModal     = document.getElementById("modal")
         const divContainer = document.createElement("div")
         const divModalInner= document.createElement("div")
@@ -82,7 +76,7 @@ class CriandoDOMLogin{
         divContainer.classList.add("conteiner")
         divModalInner.classList.add("modal-inner")
         p.setAttribute("id", "texto-erro")
-        p.insertAdjacentHTML("afterbegin", "E-mail ou senha inválidos")
+        p.insertAdjacentHTML("afterbegin", `${info}`)
         button.setAttribute("id", "botao-modal")
         button.insertAdjacentHTML("afterbegin", "Sair")
 
