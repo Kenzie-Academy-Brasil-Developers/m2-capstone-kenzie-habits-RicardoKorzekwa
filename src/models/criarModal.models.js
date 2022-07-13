@@ -5,39 +5,39 @@ class criarModal {
 
     static criarNovoHabito() {
 
-        let btnCreate = document.querySelector('.botao_criar');
-        let closePageCreate = document.getElementById('closeCreate')
+        let botaoCriar = document.querySelector('.botao_criar');
+        let botaoFechar = document.getElementById('fechar_criarModal')
 
-        btnCreate.addEventListener('click', (e) => {
+        botaoCriar.addEventListener('click', (e) => {
             e.preventDefault()
-            console.log('teste')
-            let modal = document.getElementById('modalCreate');
+            console.log('estou funcionando')
+            let modal = document.getElementById('criar_modal');
 
             modal.style.display = 'flex';
 
-            let insertBtn = document.getElementById('insertBtn')
+            let botaoInserir = document.getElementById('botaoInserir')
 
-            insertBtn.addEventListener('click', (e) => {
+            botaoInserir.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('testeClique')
-                let title = document.getElementById('modalTitleCreate');
-                let desc = document.getElementById('modalDescriCreate');
-                let select = document.getElementById('selectCatHabit');
+                console.log('botaoFuncionando')
+                let titulo = document.getElementById('titulo_criarModal');
+                let descricao = document.getElementById('descricao_criarModal');
+                let selecionar = document.getElementById('selecionar_categoriaHabito');
 
                 let bodyNewHabit = {
-                    habit_title: title.value,
-                    habit_description: desc.value,
-                    habit_category: select.value
+                    titulo_habito: titulo.value,
+                    descricao_habito: descricao.value,
+                    categoria_habito: selecionar.value
                 }
 
                 Habit.criarHabito(novoHabito);
             })
         })
 
-        closePageCreate.addEventListener('click', (e) => {
+        botaoFechar.addEventListener('click', (e) => {
             e.preventDefault()
 
-            let modal = document.getElementById('modalCreate');
+            let modal = document.getElementById('criar_modal');
 
             modal.style.display = 'none';
         })
