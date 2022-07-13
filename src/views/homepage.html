@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/modalCriarHabito.css">
 
     <title>KenzieHabit</title>
 </head>
@@ -42,7 +43,7 @@
                 <div>
                     <button>Todos</button>
                     <button>Concluídos</button>
-                    <button>Criar</button>
+                    <button class="botao_criar">Criar</button>
                 </div>
             </nav>
             <ul class="ul">
@@ -85,6 +86,31 @@
             </ul>
             <button class="btn_homepage">Carregar mais</button>
         </section>
+
+        <div class = 'modal' id="modalCreate">
+            <div class="modalHabit" id="modalHabit">
+              <div class="headerModal">
+                <h3>Criar Hábito</h3>
+                <p id="closeCreate">X</p>
+              </div>
+              <form action="" class="modalForm">
+                <p>Título</p>
+                <input type = 'text' class= "inputModal" id="modalTitleCreate" placeholder="Digitar Título">
+                <p>Descrição</p>
+                <input type = 'text' class= "inputModal" id="modalDescriCreate" placeholder=" Digitar Descrição">
+                <p>Categoria</p>
+                <select class="selectHabit" id="selectCatHabit">
+                  <option>Selecionar Categoria</option>
+                  <option>💜 Saúde</option>
+                  <option>🖊️ Estudo</option>
+                  <option>🏠 Casa</option>
+                  <option>🔨 Trabalho</option>
+                  <option>🏖️ Lazer</option>
+                </select>
+                <input type="submit" class="btnModalHabit" value="Inserir" id="insertBtn">
+              </form>
+            </div>
+          </div>
     </main>
 
 
