@@ -2,6 +2,7 @@ export default class CriarTabela {
     static tabela(idSection) {
         let section = document.getElementById(idSection)
         let table = document.createElement("table")
+        table.classList.add("table")
         table.id ="table"
         table.innerHTML = `<thead>
         <tr>
