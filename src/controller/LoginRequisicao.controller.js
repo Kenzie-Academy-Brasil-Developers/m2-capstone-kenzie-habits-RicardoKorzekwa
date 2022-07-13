@@ -1,3 +1,4 @@
+import CriandoDOMLogin from "./LoginDOM.controller.js"
 class RequisicaoLogin{
     static url = "https://habits-kenzie.herokuapp.com/api/userLogin"
     static async login(loginData){
@@ -10,10 +11,13 @@ class RequisicaoLogin{
         })
 
         const data = await response.json()
+
+        .catch(CriandoDOMLogin.modalErro())
         window.localStorage.setItem("@kenzieHabit-username", data.response.usr_name)
         window.localStorage.setItem("@kenzieHabit-email", data.response.usr_email)
         window.localStorage.setItem("@kenzieHabit-image", data.response.usr_image)
         window.localStorage.setItem("@kenzieHabit-token", data.token)
+
         console.log(data)
         return data
     }
