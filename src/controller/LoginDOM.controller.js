@@ -65,7 +65,7 @@ class CriandoDOMLogin{
        await RequisicaoLogin.login(loginData)
        .then(res => res.response.usr_name)
        .then(res=>{ if(res !== undefined){
-        location.href = "https://open.spotify.com/playlist/0WteF68M95vAMpsvwnwzhO"
+        location.href = "./src/views/homepage.html"
        }else{
         window.alert("email ou senha inválidos")
        }})
