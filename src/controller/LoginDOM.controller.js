@@ -4,7 +4,7 @@ import RequisicaoLogin from "./LoginRequisicao.controller.js"
 
 class CriandoDOMLogin{
     static div = document.getElementById("boxLogin")
-    static loginForm(){
+    static async loginForm(){
     //parte com background azul
         const sectionTitulo = document.createElement("section")
         const h1      = document.createElement("h1")
@@ -63,13 +63,42 @@ class CriandoDOMLogin{
             password: inputSenha.value
         }
        await RequisicaoLogin.login(loginData)
-       .then(res => res.response.usr_name)
+      /*  .then(res => res.response.usr_name)
        .then(res=>{ if(res !== undefined){
-        location.href = "./src/views/homepage.html"
-       }else{
-        window.alert("email ou senha inválidos")
-       }})
+        location.href = N//homepage
+
+       }}) */
+       window.location.href = "src/views/homepage.html";
        })
+    }
+    
+    static modalErro(){
+        const divModal     = document.getElementById("modal")
+        const divContainer = document.createElement("div")
+        const divModalInner= document.createElement("div")
+        const p            = document.createElement("p")
+        const button       = document.createElement("button")
+
+        divContainer.classList.add("conteiner")
+        divModalInner.classList.add("modal-inner")
+        p.setAttribute("id", "texto-erro")
+        p.insertAdjacentHTML("afterbegin", "E-mail ou senha inválidos")
+        button.setAttribute("id", "botao-modal")
+        button.insertAdjacentHTML("afterbegin", "Sair")
+
+        divModalInner.append(p, button)
+        divContainer.append(divModalInner)
+
+        divModal.append(divContainer)
+
+        divModal.style.display = "flex"
+        button.addEventListener("click", ()=>{
+            divModal.style.display = "none"
+            divModal.innerHTML =""
+        })
+
+
     }
 }
 CriandoDOMLogin.loginForm()
+export default CriandoDOMLogin
