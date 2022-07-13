@@ -182,3 +182,83 @@ main {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.modalEditar{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(33, 37, 41,0.65);
+    align-items: center;
+    justify-content: center;
+}
+.modalContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+.modalInner {
+    background-color: var(--grey-6);
+    width: 25%;
+    max-width: 100%;
+    min-height: 30%;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.modalEditarCabecalho{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+#editarPerfilTitulo{
+    font: var(--Title-5);
+    color: rgba(33, 37, 41,0.95);
+    margin: 1.5rem 0 0 1rem;
+}
+#modalEditarButton{
+    margin: 1rem 1rem 0 0;
+    border: none;
+    background-color: var(--grey-6)
+}
+.formularioEditarPerfil{
+    width: 90%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 2rem;
+
+}
+.inputEditarPerfil{
+    margin-bottom: 10%;
+    height: 15%;
+    border: none;
+    background-color: var(--grey-4);
+    border-radius: 2%;
+}
+label{
+    font: var(--Text-3-400);
+    font-size: small;
+}
+.buttonEditarPerfil{
+    height: 15%;
+    border: none;
+    background-color: rgba(65, 90, 243,0.9);
+    color: var(--grey-6);
+    border-radius: 3%;
+    font-weight: bold;
+}
+button:hover{
+    border: 2px solid rgba(65, 90, 243,0.9);
+    color: rgba(65, 90, 243,0.9);
+    background-color: var(--grey-6);
+    transition: 1s;
+    cursor: pointer;
+}
