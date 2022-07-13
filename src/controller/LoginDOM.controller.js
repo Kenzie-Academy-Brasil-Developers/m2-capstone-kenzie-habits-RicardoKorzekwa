@@ -66,6 +66,7 @@ class CriandoDOMLogin{
        .then(res => res.response.usr_name)
        .then(res=>{ if(res !== undefined){
         location.href = N//homepage
+
        }})
        })
     }

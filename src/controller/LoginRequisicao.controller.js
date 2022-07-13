@@ -11,13 +11,21 @@ class RequisicaoLogin{
         })
 
         const data = await response.json()
+
         .catch(CriandoDOMLogin.modalErro())
-        window.localStorage.setItem("username", data.response.usr_name)
-        window.localStorage.setItem("email", data.response.usr_email)
-        window.localStorage.setItem("image", data.response.usr_image)
-        window.localStorage.setItem("token", data.token)
+        window.localStorage.setItem("@kenzieHabit-username", data.response.usr_name)
+        window.localStorage.setItem("@kenzieHabit-email", data.response.usr_email)
+        window.localStorage.setItem("@kenzieHabit-image", data.response.usr_image)
+        window.localStorage.setItem("@kenzieHabit-token", data.token)
+
         console.log(data)
         return data
+    }
+    static logout(){
+        window.localStorage.removeItem("@kenzieHabit-username")
+        window.localStorage.removeItem("@kenzieHabit-email")
+        window.localStorage.removeItem("@kenzieHabit-image")
+        window.localStorage.removeItem("@kenzieHabit-token")
     }
 
 }
