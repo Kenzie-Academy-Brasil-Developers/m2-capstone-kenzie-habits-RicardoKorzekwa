@@ -65,11 +65,38 @@ class CriandoDOMLogin{
        await RequisicaoLogin.login(loginData)
        .then(res => res.response.usr_name)
        .then(res=>{ if(res !== undefined){
-        location.href = "https://open.spotify.com/playlist/0WteF68M95vAMpsvwnwzhO"
-       }else{
-        window.alert("email ou senha inválidos")
+        location.href = //homepage
        }})
        })
     }
+    
+    static modalErro(){
+        const divModal     = document.getElementById("modal")
+        const divContainer = document.createElement("div")
+        const divModalInner= document.createElement("div")
+        const p            = document.createElement("p")
+        const button       = document.createElement("button")
+
+        divContainer.classList.add("conteiner")
+        divModalInner.classList.add("modal-inner")
+        p.setAttribute("id", "texto-erro")
+        p.insertAdjacentHTML("afterbegin", "E-mail ou senha inválidos")
+        button.setAttribute("id", "botao-modal")
+        button.insertAdjacentHTML("afterbegin", "Sair")
+
+        divModalInner.append(p, button)
+        divContainer.append(divModalInner)
+
+        divModal.append(divContainer)
+
+        divModal.style.display = "flex"
+        button.addEventListener("click", ()=>{
+            divModal.style.display = "none"
+            divModal.innerHTML =""
+        })
+
+
+    }
 }
 CriandoDOMLogin.loginForm()
+export default CriandoDOMLogin
