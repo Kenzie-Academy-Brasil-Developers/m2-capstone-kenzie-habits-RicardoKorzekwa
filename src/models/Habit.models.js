@@ -41,7 +41,7 @@ export default class Habit{
     }
 
     static async atualizarHabito(id, habitoAtualizado){
-        return await fetch(`${this.urlBase}${id}`,{
+        return await fetch(`${this.urlBase}/${id}`,{
             method: "PATCH",
             headers: {
                 "Content-Type"  : "application/json",
