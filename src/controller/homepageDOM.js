@@ -6,18 +6,42 @@ export default class CriarTabela {
         let table = document.createElement("table")
         table.classList.add("table")
         table.id ="table"
-        table.innerHTML = `<thead>
-        <tr>
-            <th>Status</th>
-            <th>Título</th>
-            <th>Descrição</th>
-            <th>Categoria</th>
-            <th>Editar</th>
 
-        </tr>
-    </thead>`
+       let cabecalho = this.cabecalho()
+
+        table.appendChild(cabecalho)
          section.appendChild(table)
     }
+
+
+    static cabecalho(){
+
+        let thead = document.createElement("thead");
+
+        let tr = document.createElement("tr")
+
+        let thStatus = document.createElement("th")
+        thStatus.innerText = "Status"
+
+        let thTitulo = document.createElement("th")
+        thTitulo.innerText="Título"
+
+        let thDescricao = document.createElement("th")
+        thDescricao.innerText = "Descrição"
+
+        let thCategoria = document.createElement("th")
+        thCategoria.innerText = "Categoria"
+
+        let thEditar = document.createElement("th")
+        thEditar.innerText= "Editar"
+
+        tr.append(thStatus, thTitulo, thDescricao, thCategoria, thEditar)
+        thead.appendChild(tr)
+
+        return thead
+
+    }
+
     static bodyTabela(arr, idTabela){
         let tabela = document.getElementById(idTabela)
         let tbody = document.createElement("tbody")
@@ -33,6 +57,7 @@ export default class CriarTabela {
 
             imput.addEventListener("click", () =>{ 
                  Habit.completarHabito(arr[i].habit_id)
+                 this.click()
             })
             
             let thTitulo = document.createElement("th")
@@ -56,8 +81,6 @@ export default class CriarTabela {
             tbody.appendChild(tr)
         }
         tabela.appendChild(tbody)
-        console.log(arr)
     }
     
-
 }
