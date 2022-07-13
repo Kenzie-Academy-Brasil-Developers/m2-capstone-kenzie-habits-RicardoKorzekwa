@@ -95,6 +95,57 @@ label{
     margin-top: 1rem;
     font-weight: bold;
 }
+.modal {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(33, 37, 41,0.65);
+    align-items: center;
+    justify-content: center;
+}
+.modal>.conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+.modal-inner {
+    background-color: rgb(240, 56, 57);
+    border: 2px solid white;
+    width: 32rem;
+    max-width: 100%;
+    min-height: 10rem;
+    border-radius: 10%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.modal-inner>p {
+    font: var(--Text-2-500);
+    color: var(--grey-1);
+    padding: 0 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#botao-modal {
+    font: var(--Title-4);
+    display: flex;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+}
+button:hover{
+    color: var(--grey-2);
+    transition: 0.5s;
+}
 
 @media(min-width:600px) {
     .boxLogin{
