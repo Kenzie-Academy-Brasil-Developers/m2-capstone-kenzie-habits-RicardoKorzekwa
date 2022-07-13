@@ -9,8 +9,20 @@ logout.addEventListener("click", elem => {
     window.location.href = "../../index.html";
     
 })
-const arrHabits = await Habit.listarTodosHabitos()
-console.log(arrHabits)
+
+let arrHabitos = await Habit.listarTodosHabitos()
+let arrHabitosFinal= []
+let arrHabitosFalse =[]
+
+ arrHabitos.forEach((elem) => {
+     if(elem.habit_status != true){arrHabitosFinal.push(elem)}else{
+        arrHabitosFalse.push(elem)
+     }
+ }
+ )
+
+arrHabitosFalse.forEach((elem) => {arrHabitosFinal.push(elem)})
 
 CriarTabela.tabela("section_main")
+CriarTabela.bodyTabela(arrHabitosFinal,"table")
 

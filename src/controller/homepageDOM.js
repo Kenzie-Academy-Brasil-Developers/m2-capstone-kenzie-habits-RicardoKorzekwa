@@ -1,3 +1,5 @@
+import Habit from "../models/Habit.models.js"
+
 export default class CriarTabela {
     static tabela(idSection) {
         let section = document.getElementById(idSection)
@@ -25,10 +27,17 @@ export default class CriarTabela {
             let thStatus = document.createElement("th")
             let imput = document.createElement("input")
             imput.type = "checkbox"
+            imput.classList.add("cursor")
+            if(arr[i].habit_status != false){imput.checked = true}else{imput.checked = false}
             thStatus.appendChild(imput)
 
+            imput.addEventListener("click", () =>{ 
+                 Habit.completarHabito(arr[i].habit_id)
+            })
+            
             let thTitulo = document.createElement("th")
             thTitulo.innerText = arr[i].habit_title
+            if(arr[i].habit_status != false){thTitulo.classList.add("check")}
 
             let thDescricao = document.createElement("th")
             thDescricao.innerText =arr[i].habit_description
@@ -39,7 +48,16 @@ export default class CriarTabela {
             let thEditar = document.createElement("th")
             thEditar.innerText = "°°°"
             thEditar.id = arr[i].habit_id
+            thEditar.classList.add("cursor")
+
+            thEditar.addEventListener("click", () => Habit.deleteHabito(arr[i].habit_id))
+
+            tr.append(thStatus, thTitulo, thDescricao, thCategoria, thEditar)
+            tbody.appendChild(tr)
         }
+        tabela.appendChild(tbody)
+        console.log(arr)
     }
+    
 
 }

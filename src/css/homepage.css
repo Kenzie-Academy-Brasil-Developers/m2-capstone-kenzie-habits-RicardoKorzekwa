@@ -183,3 +183,6 @@ main {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.cursor{
+    cursor: pointer;
+}
