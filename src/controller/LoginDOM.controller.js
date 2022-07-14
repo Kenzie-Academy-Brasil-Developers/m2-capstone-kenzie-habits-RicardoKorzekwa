@@ -2,7 +2,7 @@ import RequisicaoLogin from "./LoginRequisicao.controller.js"
 
 
 
-class CriandoDOMLogin{
+export default class CriandoDOMLogin{
     static div = document.getElementById("boxLogin")
     static async loginForm(){
     //parte com background azul
@@ -95,4 +95,3 @@ class CriandoDOMLogin{
     }
 }
 CriandoDOMLogin.loginForm()
-export default CriandoDOMLogin

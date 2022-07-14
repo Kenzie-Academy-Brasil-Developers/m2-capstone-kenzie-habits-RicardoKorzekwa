@@ -1,4 +1,5 @@
 import Habit from "../models/Habit.models.js"
+import RenderModal from "./modalEditarHabito.controller.js"
 
 export default class CriarTabela {
     static tabela(idSection) {
@@ -79,6 +80,10 @@ export default class CriarTabela {
             thEditar.innerText = "°°°"
             thEditar.id = arr[i].habit_id
             thEditar.classList.add("cursor")
+
+
+            thEditar.addEventListener("click", () => RenderModal.habito(arr[i].habit_id))
+
 
             tr.append(thStatus, thTitulo, thDescricao, thCategoria, thEditar)
             tbody.appendChild(tr)
