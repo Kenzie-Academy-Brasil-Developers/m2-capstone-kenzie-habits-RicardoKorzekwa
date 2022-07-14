@@ -29,15 +29,31 @@ CriarTabela.tabela("section_main")
 CriarTabela.bodyTabela(arrHabitosFinal,"table")
 criarModal.criarNovoHabito()
 
-let div1 = document.querySelector('.botao_editar')
+let btnEdit = document.querySelector('.botao_editar')
 
-div1.addEventListener("click", () => teste1())
+btnEdit.addEventListener("click", () => sairM())
 
 const div = document.getElementById("modalEditar")
 
-function teste1() {
+function sairM() {
     div.innerHTML=""
-    let teste = CriandoDOMHomepage.modalEditarPerfil()
-    div.appendChild(teste)
+    let modal = CriandoDOMHomepage.modalEditarPerfil()
+    div.appendChild(modal)
     div.style.display="inline"
 }
+
+let imagemHeader = document.querySelector(".img_header1")
+let imagemHeader2 = document.querySelector(".img_header2")
+
+
+const imagem = window.localStorage.getItem("@kenzieHabit-image")
+const nome = window.localStorage.getItem("@kenzieHabit-username")
+
+imagemHeader.src = imagem
+imagemHeader2.src = imagem
+
+let nome1 = document.querySelector(".nome1")
+let nome2 = document.querySelector(".nome2")
+
+nome1.innerText = nome
+nome2.innerText = nome
