@@ -7,9 +7,17 @@ export default class CriandoDOMLogin{
     static async loginForm(){
     //parte com background azul
         const sectionTitulo = document.createElement("section")
-        const h1      = document.createElement("h1")
-        const p       = document.createElement("p")
-        const p2      = document.createElement("p")
+        const h1            = document.createElement("h1")
+        const p             = document.createElement("p")
+        const p2            = document.createElement("p")
+        const sectionImg    = document.createElement("section")
+        const imgLogin      = document.createElement("img")
+
+        sectionImg.classList.add("sectionImg")
+        imgLogin.classList.add("imgLogin")
+        imgLogin.src = "./src/assets/img/login.png.png"
+
+        sectionImg.append(imgLogin)
 
         sectionTitulo.classList.add("sectionTitulo")
         h1.classList.add("loginTitulo")
@@ -19,7 +27,7 @@ export default class CriandoDOMLogin{
         p.insertAdjacentHTML("afterbegin", "Faça aqui seu login")
         p2.insertAdjacentHTML("afterbegin", "Faça aqui seu login")
 
-        sectionTitulo.append(h1,p)
+        sectionTitulo.append(h1,p, sectionImg)
     
     //form
         const sectionForm = document.createElement("section")
