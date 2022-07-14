@@ -1,21 +1,40 @@
+import Habit from "./Habit.models.js";
+
 export default class RenderModalDelete{
 
-    static modal = document.querySelector('.modal');
+    static criarModalDelete(id_habito){
 
-    static criarModalDelete(){
+        const modal = document.querySelector(`.modal`);
+        modal.innerHTML = ''
 
         const divModalDelete                = document.createElement('div');
         const divModalContainer             = document.createElement('div');
         const divModalInner                 = document.createElement('div');
         const divModalCabecalho             = document.createElement('div')
         const h2CabecalhoTitulo             = document.createElement('h2');
-        const buttonSair                    = document.createElement('button');
+        const buttonSair                    = document.createElement('button');  
+
+        buttonSair.addEventListener('click', elem => {
+            modal.innerHTML = '';
+            modal.style.display = 'none';
+        })
+
         const divModalDeleteContent         = document.createElement('div');
         const h2ModalDeleteTitulo           = document.createElement('h2');
         const pModalDeleteParagrafo         = document.createElement('p');
         const divModalDeleteButao           = document.createElement('div');
         const divModalDeleteButaoCancelar   = document.createElement('button');
+
+        divModalDeleteButaoCancelar.addEventListener('click', elem => {
+            modal.innerHTML = '';
+            modal.style.display = 'none';
+        })
+
         const divModalDeleteButaoExcluir    = document.createElement('button');
+
+        divModalDeleteButaoExcluir.addEventListener('click', elem => {
+            Habit.deleteHabito(id_habito)
+        })
     
         divModalDelete.className                = 'modal__delete';
         divModalContainer.className             = 'modal__delete__container';
@@ -29,7 +48,7 @@ export default class RenderModalDelete{
         divModalDeleteButao.className           = 'modal__delete__butao__acao';
         divModalDeleteButaoCancelar.className   = 'modal__delete__butao__cancelar';
         divModalDeleteButaoExcluir.className    = 'modal__delete__butao__excluir';
-    
+
         h2CabecalhoTitulo.innerText             = 'Excluir hábito';
         buttonSair.innerText                    = 'X';
         h2ModalDeleteTitulo.innerText           = 'Certeza que deseja excluir este hábito?';
@@ -43,24 +62,13 @@ export default class RenderModalDelete{
         divModalInner.append(divModalCabecalho, divModalDeleteContent, divModalDeleteButao);
         divModalContainer.append(divModalInner);
         divModalDelete.append(divModalContainer);
-    
-        this.modal.append(divModalDelete);
-        this.modal.display = 'flex'
-        this.fecharModal()
-    }
-
-    static fecharModal(){
-        const btnSair = document.querySelector('.modal__delete__sair');
-        btnSair.addEventListener('click', elem => {
-            this.modal.innerHTML = '';
-            this.modal.style.display = 'none';
-        })
+        modal.append(divModalDelete)
 
     }
-
-    static excluirTarefa(){}
 
 }
+
+
 
 
 

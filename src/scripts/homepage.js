@@ -3,10 +3,9 @@ import Habit from "../models/Habit.models.js";
 import RequisicaoLogin from "../controller/LoginRequisicao.controller.js"
 import criarModal from "../models/criarModal.models.js";
 
-import RenderModal from "../controller/modalEditarHabito.controller.js";
-
 import CriandoDOMHomepage from "../controller/HomepageDOM.controller.js";
-
+import RenderModal from "../controller/modalEditarHabito.controller.js";
+import RenderModalDelete from "../models/modalDelete.models.js";
 
 const logout = document.querySelector('.botao_logout')
 
@@ -48,7 +47,6 @@ btnTodos.addEventListener("click", ()=>{
 })
 
 
-
 let btnEdit = document.querySelector('.botao_editar')
 
 
@@ -64,12 +62,9 @@ function sairM() {
     div.style.display="inline"
 }
 
-
-
 let imagemHeader = document.querySelector(".img_header1")
 let imagemHeader2 = document.querySelector(".img_header2")
 let imagemHeader3 = document.querySelector(".imgPerfil")
-
 
 
 const imagem = window.localStorage.getItem("@kenzieHabit-image")
@@ -85,4 +80,9 @@ let nome2 = document.querySelector(".nome2")
 imagemHeader3.href = imagem
 nome1.innerText = nome
 nome2.innerText = nome
+
+RenderModal.fechaModal();
+
+
+
 
