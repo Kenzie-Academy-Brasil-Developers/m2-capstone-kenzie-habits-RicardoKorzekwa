@@ -28,6 +28,17 @@ body{
     font: var(--Text-2-500);
     color: var(--brand-3);
 }
+.sectionImg{
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.imgLogin{
+    width: 90%;
+    height: 90%;
+}
 .sectionForm{
     padding: 1rem;
     height: 60%;
@@ -171,6 +182,11 @@ button:hover{
         font: var(--Text-2-500);
         color: var(--brand-3);
     }
+    .sectionImg{
+        display: flex;
+        width: 19rem;
+        height: 19rem;
+    }
     
     .sectionForm{
         padding: 5rem;
@@ -241,7 +257,11 @@ button:hover{
         font: var(--Text-1-500);
         color: var(--brand-3);
     }
-    
+    .sectionImg{
+        display: flex;
+        width: 90%;
+        height: 90%;
+    }
     .sectionForm{
         padding: 5rem;
         width: 50%;

@@ -44,59 +44,17 @@
     <main>
         <section class="section_main" id="section_main">
             <nav class="nav">
-                <h2>Tarefas</h2>
-                <div>
-                    <button id="btnTodos">Todos</button>
-                    <button id="btnConcluidos">Concluídos</button>
+                <h2 class="nav_h2">Tarefas</h2>
+                <div class="nav_botoes">
+                    <button class="btnfiltro" id="btnTodos">Todos</button>
+                    <button class="btnfiltro" id="btnConcluidos">Concluídos</button>
                     <button class="botao_criar">Criar</button>
                 </div>
             </nav>
         </section>
 
-
-        <div class="modal">
-            <div class="modal__delete">
-                <div class="modal__delete__container">
-                    <div class="modal__inner">
-                        <div class="modal__delete__cabecalho">
-                            <h2 class="modal__delete__titulo">
-                                Excluir hábito
-                            </h2>
-                
-                            <button class="modal__delete__sair">
-                                X
-                            </button>
-                        </div>
-                
-                        <div class="modal__delete__conteudo">
-                            <h2 class="modal__delete__conteudo__titulo">
-                                Certeza que deseja excluir este hábito?
-                            </h2>
-                            <p class="modal__delete__conteudo__paragrafo">
-                                Após executar essa ação não será possível desfazer
-                            </p>
-                        </div>
-                
-                        <div class="modal__delete__butao__acao">
-                            <button class="modal__delete__butao__cancelar">
-                                Cancelar
-                            </button>
-                
-                            <button class="modal__delete__butao__excluir">
-                                Sim, excluir este hábito
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <div class="modal">
         </div>
-
-
-            <div class="modalEditar" id="modalEditar"></div>
    
         <div class = 'modal' id="criar_modal">
             <div class="modal_habito">
@@ -122,9 +80,19 @@
               </form>
             </div>
           </div>
+
+        
+        
     </main>
+    <footer class="button__carregar">
+        <button class="button__carregar__mais">
+            Carregar mais
+        </button>
+    </footer>
+    
 <script type="module" src="../controller/HomepageDOM.controller.js"></script>
 <script type="module" src="../scripts/homepage.js"></script>
+<script type="module" src="../models/modalDelete.models.js"></script>
 
 
 </body>
