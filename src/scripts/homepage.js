@@ -41,3 +41,5 @@ function teste1() {
     div.appendChild(teste)
     div.style.display="inline"
 }
+
+
