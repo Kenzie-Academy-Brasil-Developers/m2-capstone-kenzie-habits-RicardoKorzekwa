@@ -1,4 +1,5 @@
 import Habit from "../models/Habit.models.js"
+import RenderModalDelete from "../models/modalDelete.models.js"
 
 export default class RenderModal{
     
@@ -6,7 +7,6 @@ export default class RenderModal{
     
     static habito(id_habito){
         
-
         const fundo             = document.createElement('div')
         const container         = document.createElement('div')
         const inner             = document.createElement('div')
@@ -80,7 +80,7 @@ export default class RenderModal{
         salvarBtn.innerText          = "Salvar"
         salvarBtn.type               = "submit"
 
-        cancelarBtn.innerText        = "Cancelar"
+        cancelarBtn.innerText        = "Excluir"
 
         containerBtn.append(cancelarBtn, salvarBtn)
         status.append(labelStatus, inputCheckBox)
@@ -93,12 +93,12 @@ export default class RenderModal{
         fundo.append(container)
         this.modal.append(fundo)
         this.modal.style.display = "flex"
-        this.fechaModal()
+        this.fechaModal(id_habito)
         this.salvarDados()
         
     }
 
-    static fechaModal(){
+    static fechaModal(id_habito){
 
         const btnSair = document.querySelector(".modal__editarHabito__sair")
         const btnCancelar = document.querySelector(".modal__editarHabito__butao__cancelar")
@@ -109,10 +109,8 @@ export default class RenderModal{
         })
 
         btnCancelar.addEventListener("click", elem => {
-            this.modal.innerHTML = ''
-            this.modal.style.display = 'none'
+            RenderModalDelete.criarModalDelete(id_habito);
         })
-
         
     }
 
@@ -141,3 +139,5 @@ export default class RenderModal{
         })
     }
 }
+
+
