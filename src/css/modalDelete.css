@@ -1,0 +1,118 @@
+/* Modal Delete */
+/* config gerais */
+
+.modal__delete{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.63);
+    
+    z-index: 1;
+}
+
+.modal__delete__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+
+}
+
+.modal__inner{
+    background-color: var(--branco);
+    width: 500px;
+    max-width: 100%;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+
+}
+
+.modal__delete__cabecalho{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__delete__titulo{
+    font: var(--Title-3);
+}
+
+.modal__delete__sair{
+    background-color: transparent;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: var(--grey-3);
+    cursor: pointer;
+
+}
+
+.modal__delete__conteudo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1.5rem;
+}
+
+.modal__delete__conteudo__titulo{
+    font: var(--Title-4);
+}
+
+.modal__delete__conteudo__paragrafo{
+    font: var(--Text-2-400);
+    color: var(--grey-2);
+}
+
+
+.modal__delete__butao__acao{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 13px;
+
+}
+
+.modal__delete__butao__cancelar{
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--grey-5);
+    width: 43%;
+    font: var(--Text-2-500);
+    
+}
+
+.modal__delete__butao__cancelar:hover{
+    filter: brightness(0.96);
+}
+
+.modal__delete__butao__excluir{
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--error-1);
+    color: var(--branco);
+    width: 56%;
+    font: var(--Text-2-400);
+}
+
+.modal__delete__butao__excluir:hover{
+    filter: brightness(1.2);
+}
+
+
+
+
+
+

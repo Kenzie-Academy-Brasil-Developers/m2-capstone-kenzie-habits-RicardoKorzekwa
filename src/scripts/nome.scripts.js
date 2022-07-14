@@ -7,3 +7,12 @@ logout.addEventListener("click", elem => {
     window.location.href = "../../index.html";
     
 })
+
+
+
+
+
+
+
+
+
