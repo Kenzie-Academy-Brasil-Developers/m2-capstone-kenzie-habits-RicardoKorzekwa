@@ -1,8 +1,8 @@
 
-class CriandoDOMHomepage{
+export default class CriandoDOMHomepage{
 
     static modalEditarPerfil(){
-        const div = document.getElementById("modalEditar")
+        
 
         const divContainer= document.createElement("div")
         divContainer.classList.add("modalContainer")
@@ -52,12 +52,12 @@ class CriandoDOMHomepage{
         divInner.append(sectionCabecalho, form)
         divContainer.append(divInner)
         
-        div.append(divContainer)
-
+       
         buttonModal.addEventListener("click",()=>{
-            div.style.display= "none"
+            //div.style.display= "none"
         })
+        
+        return divContainer
 
     }
 }
-CriandoDOMHomepage.modalEditarPerfil()
