@@ -68,7 +68,11 @@ export default class CriarTabela {
             thDescricao.innerText =arr[i].habit_description
 
             let thCategoria = document.createElement("th")
-            thCategoria.innerText= arr[i].habit_category
+            let span = document.createElement("span")
+            span.innerText= arr[i].habit_category
+            span.classList.add("categoria")
+            thCategoria.appendChild(span)
+            
 
             let thEditar = document.createElement("th")
             thEditar.innerText = "°°°"
