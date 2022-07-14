@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/modalCriarHabito.css">
 
     <title>KenzieHabit</title>
 </head>
@@ -24,8 +25,8 @@
             <div class="dropdown">
                 <img src="../assets/img/luffy.avif" alt="imagem usuario" class="img_header1">
                 <div class="dropdown-content">
-                    <button class="botao_editar">Editar Perfil</button>
-                    <button class="botao_logout">Logout</button>
+                    <button class="botao_editar cursor">Editar Perfil</button>
+                    <button class="botao_logout cursor">Logout</button>
                 </div>
             </div>
         </section>
@@ -36,78 +37,55 @@
         </section>
     </header>
     <main>
-        <section class="section_main">
+        <section class="section_main" id="section_main">
             <nav class="nav">
                 <h2>Tarefas</h2>
                 <div>
                     <button>Todos</button>
                     <button>Concluídos</button>
-                    <button>Criar</button>
+                    <button class="botao_criar">Criar</button>
                 </div>
             </nav>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Título</th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                        <th>Editar</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>Fazer exercícios segunda pela manhã</th>
-                        <th>Ir correr na praça próximo de csa</th>
-                        <th><span class="categoria">Saúde</span></th>
-                        <th class="editar">°°°</th>
-                    </tr>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>Fazer exercícios segunda pela manhã</th>
-                        <th>Ir correr na praça próximo de csa</th>
-                        <th><span class="categoria">Saúde</span></th>
-                        <th class="editar">°°°</th>
-                    </tr>
-                    <tr>
-                        <th><input type="checkbox" checked></th>
-                        <th class="check">Fazer exercícios segunda pela manhã</th>
-                        <th>Ir correr na praça próximo de csa</th>
-                        <th><span class="categoria">Saúde</span></th>
-                        <th class="editar">°°°</th>
-                    </tr>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>Fazer exercícios segunda pela manhã</th>
-                        <th>Ir correr na praça próximo de csa</th>
-                        <th><span class="categoria">Saúde</span></th>
-                        <th class="editar">°°°</th>
-                    </tr>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>Fazer exercícios segunda pela manhã</th>
-                        <th>Ir correr na praça próximo de csa</th>
-                        <th><span class="categoria">Saúde</span></th>
-                        <th class="editar">°°°</th>
-                    </tr>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>Fazer exercícios segunda pela manhã</th>
-                        <th>Ir correr na praça próximo de csa</th>
-                        <th><span class="categoria">Saúde</span></th>
-                        <th class="editar">°°°</th>
-                    </tr>
-            </table>
-            <button class="btn_homepage">Carregar mais</button>
         </section>
 
+
             <div class="modalEditar" id="modalEditar"></div>
+   
+
+    
+    
+
+
+        <div class = 'modal' id="criar_modal">
+            <div class="modal_habito" id="modal_habito">
+              <div class="modal_header">
+                <h3>Criar Hábito</h3>
+                <p id="fechar_criarModal">X</p>
+              </div>
+              <form action="" class="form_modal">
+                <p>Título</p>
+                <input type = 'text' class= "input_modal" id="titulo_criarModal" placeholder="Digitar Título">
+                <p>Descrição</p>
+                <input type = 'text' class= "input_modal" id="descricao_criarModal" placeholder=" Digitar Descrição">
+                <p>Categoria</p>
+                <select class="selecionar_habito" id="selecionar_cate">
+                  <option>Selecionar Categoria</option>
+                  <option>💜 Saúde</option>
+                  <option>🖊️ Estudo</option>
+                  <option>🏠 Casa</option>
+                  <option>🔨 Trabalho</option>
+                  <option>🏖️ Lazer</option>
+                </select>
+                <input type="submit" class="botao_modalHabito" value="Inserir" id="botaoInserir">
+              </form>
+            </div>
+          </div>
     </main>
 
-    <img src="" alt="">
-    <script src="../controller/HomepageDOM.controller.js"></script>
+<script type="module" src="../scripts/homepage.js"></script>
+<script type="module" src="../scripts/nome.scripts.js"></script>
+<script src="../controller/HomepageDOM.controller.js"></script>
+
 </body>
 
 </html>
