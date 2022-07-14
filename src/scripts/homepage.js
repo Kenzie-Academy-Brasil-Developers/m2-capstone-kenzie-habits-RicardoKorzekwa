@@ -33,6 +33,21 @@ CriarTabela.tabela("section_main")
 CriarTabela.bodyTabela(arrHabitosFinal,"table")
 criarModal.criarNovoHabito()
 
+const btnConcluidos = document.getElementById("btnConcluidos")
+btnConcluidos.addEventListener("click", ()=>{
+    let tbody = document.getElementById("tbody")
+    tbody.innerHTML = ""
+    CriarTabela.bodyTabela(arrHabitosFalse,"table")
+})
+
+const btnTodos = document.getElementById("btnTodos")
+btnTodos.addEventListener("click", ()=>{
+    let tbody = document.getElementById("tbody")
+    tbody.innerHTML = ""
+    CriarTabela.bodyTabela(arrHabitosFinal,"table")
+})
+
+
 
 let btnEdit = document.querySelector('.botao_editar')
 
