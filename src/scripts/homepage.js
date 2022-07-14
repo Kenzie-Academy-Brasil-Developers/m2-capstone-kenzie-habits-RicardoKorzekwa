@@ -5,12 +5,21 @@ import criarModal from "../models/criarModal.models.js";
 
 import CriandoDOMHomepage from "../controller/HomepageDOM.controller.js";
 
+<<<<<<< HEAD
 import RenderModal from "../controller/modalEditarHabito.controller.js";
 import RenderModalDelete from "../models/modalDelete.models.js";
 
 
 criarModal.criarNovoHabito()
 
+=======
+
+criarModal.criarNovoHabito()
+
+import RenderModal from "../controller/modalEditarHabito.controller.js";
+import RenderModalDelete from "../models/modalDelete.models.js";
+
+>>>>>>> 71fcc51cfcc036387f93ec6eb25e7720399f0a8e
 
 const logout = document.querySelector('.botao_logout')
 
