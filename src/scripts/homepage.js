@@ -41,3 +41,19 @@ function sairM() {
     div.appendChild(modal)
     div.style.display="inline"
 }
+
+let imagemHeader = document.querySelector(".img_header1")
+let imagemHeader2 = document.querySelector(".img_header2")
+
+
+const imagem = window.localStorage.getItem("@kenzieHabit-image")
+const nome = window.localStorage.getItem("@kenzieHabit-username")
+
+imagemHeader.src = imagem
+imagemHeader2.src = imagem
+
+let nome1 = document.querySelector(".nome1")
+let nome2 = document.querySelector(".nome2")
+
+nome1.innerText = nome
+nome2.innerText = nome
