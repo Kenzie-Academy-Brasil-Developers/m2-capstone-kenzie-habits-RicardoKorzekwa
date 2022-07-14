@@ -22,12 +22,12 @@ class criarModal {
                 console.log('botaoFuncionando')
                 let titulo = document.getElementById('titulo_criarModal');
                 let descricao = document.getElementById('descricao_criarModal');
-                let selecionar = document.getElementById('selecionar_categoriaHabito');
+                let categoria = document.getElementById('selecionar_categoriaHabito');
 
                 let bodyNewHabit = {
-                    titulo_habito: titulo.value,
-                    descricao_habito: descricao.value,
-                    categoria_habito: selecionar.value
+                    habit_title: titulo.value,
+                    habit_description: descricao.value,
+                    habit_category: categoria.value
                 }
 
                 Habit.criarHabito(novoHabito);

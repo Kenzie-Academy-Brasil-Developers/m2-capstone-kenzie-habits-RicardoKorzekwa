@@ -71,11 +71,11 @@ export default class RenderModal{
         inputDescricao.placeholder  = "Digite uma descrição"
         
         labelCategoria.innerText     = "Categoria"
-        optionCasa.innerText         = "Casa"
-        optionEstudo.innerText       = "Estudo"
-        optionLazer.innerText        = "Lazer"
-        optionTrabalho.innerText     = "Trabalho"
-        optionSaude.innerText        = "Saúde"
+        optionCasa.innerText         = "🏠 Casa"
+        optionEstudo.innerText       = "✏️ Estudo"
+        optionLazer.innerText        = "⛵ Lazer"
+        optionTrabalho.innerText     = "💼 Trabalho"
+        optionSaude.innerText        = "💜 Saúde"
 
         salvarBtn.innerText          = "Salvar"
         salvarBtn.type               = "submit"
