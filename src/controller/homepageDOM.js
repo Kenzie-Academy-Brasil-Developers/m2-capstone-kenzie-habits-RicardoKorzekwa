@@ -75,8 +75,6 @@ export default class CriarTabela {
             thEditar.id = arr[i].habit_id
             thEditar.classList.add("cursor")
 
-            //thEditar.addEventListener("click", () => Habit.deleteHabito(arr[i].habit_id))
-
             tr.append(thStatus, thTitulo, thDescricao, thCategoria, thEditar)
             tbody.appendChild(tr)
         }

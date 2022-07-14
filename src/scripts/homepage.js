@@ -33,11 +33,11 @@ let div1 = document.querySelector('.botao_editar')
 
 div1.addEventListener("click", () => teste1())
 
+const div = document.getElementById("modalEditar")
+
 function teste1() {
-    const div = document.getElementById("modalEditar")
-
+    div.innerHTML=""
     let teste = CriandoDOMHomepage.modalEditarPerfil()
-    console.log(teste)
-
     div.appendChild(teste)
+    div.style.display="inline"
 }
