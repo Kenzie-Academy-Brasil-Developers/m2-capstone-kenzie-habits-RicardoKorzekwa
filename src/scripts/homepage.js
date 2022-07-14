@@ -65,6 +65,7 @@ function sairM() {
 }
 
 
+
 let imagemHeader = document.querySelector(".img_header1")
 let imagemHeader2 = document.querySelector(".img_header2")
 let imagemHeader3 = document.querySelector(".imgPerfil")
@@ -84,5 +85,4 @@ let nome2 = document.querySelector(".nome2")
 imagemHeader3.href = imagem
 nome1.innerText = nome
 nome2.innerText = nome
-
 

@@ -1,3 +1,6 @@
+import Habit from "../models/Habit.models.js"
+
+
 
 export default class CriandoDOMHomepage{
 
@@ -52,6 +55,22 @@ export default class CriandoDOMHomepage{
         form.append(labelNome,inputNome,labelImg, inputImg, button)
         divInner.append(sectionCabecalho, form)
         divContainer.append(divInner)
+        
+
+        form.addEventListener("submit", async (event)=>{
+            event.preventDefault()
+            await Habit.editarPerfil({
+                usr_name : inputNome.value,
+                usr_image: inputImg.value
+            })
+            .then(imgHeader1.src = inputImg.value,
+                imgHeader2.src = inputImg.value,
+                user1.innerHTML="",
+                user2.innerHTML= "")
+            .then(user1.insertAdjacentHTML("afterbegin", inputNome.value),
+                  user2.insertAdjacentHTML("afterbegin", inputNome.value))
+
+           })
         
        
         buttonModal.addEventListener("click",()=>{
