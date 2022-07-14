@@ -93,8 +93,12 @@ export default class RenderModal{
         fundo.append(container)
         this.modal.append(fundo)
         this.modal.style.display = "flex"
+<<<<<<< HEAD
         this.fechaModal(id_habito)
+=======
+>>>>>>> 1a225ed9b848c87caa327d566309f2c35f702d53
         this.salvarDados()
+        this.fechaModal()
         
     }
 
@@ -129,7 +133,11 @@ export default class RenderModal{
                 habit_description: descricao.value,
                 habit_category: categoria.value
             }
-            if(dadosFormatados.habit_title !== "" && dadosFormatados.habit_description){
+            
+            if(dadosFormatados.habit_title !== ""){
+                
+                dadosFormatados.habit_category == "💜 Saúde" ? dadosFormatados.habit_category = 'saude' : dadosFormatados.habit_category == "✏️ Estudo" ? dadosFormatados.habit_category = 'estudos' : dadosFormatados.habit_category == "🏠 Casa" ? dadosFormatados.habit_category = 'casa' : dadosFormatados.habit_category == "💼 Trabalho" ? dadosFormatados.habit_category = 'trabalho' : dadosFormatados.habit_category == "⛵ Lazer" ? dadosFormatados.habit_category = 'lazer' : console.log()
+                
                 Habit.atualizarHabito(form.id, dadosFormatados)
             }else{
                 this.modal.innerHTML = ''

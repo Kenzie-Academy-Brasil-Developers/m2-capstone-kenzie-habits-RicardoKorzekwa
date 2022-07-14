@@ -4,8 +4,13 @@ import RequisicaoLogin from "../controller/LoginRequisicao.controller.js"
 import criarModal from "../models/criarModal.models.js";
 
 import CriandoDOMHomepage from "../controller/HomepageDOM.controller.js";
+
 import RenderModal from "../controller/modalEditarHabito.controller.js";
 import RenderModalDelete from "../models/modalDelete.models.js";
+
+
+criarModal.criarNovoHabito()
+
 
 const logout = document.querySelector('.botao_logout')
 
