@@ -2,7 +2,11 @@ import CriarTabela from "../controller/homepageDOM.js";
 import Habit from "../models/Habit.models.js";
 import RequisicaoLogin from "../controller/LoginRequisicao.controller.js"
 import criarModal from "../models/criarModal.models.js";
+
+import RenderModal from "../controller/modalEditarHabito.controller.js";
+
 import CriandoDOMHomepage from "../controller/HomepageDOM.controller.js";
+
 
 const logout = document.querySelector('.botao_logout')
 
@@ -29,7 +33,10 @@ CriarTabela.tabela("section_main")
 CriarTabela.bodyTabela(arrHabitosFinal,"table")
 criarModal.criarNovoHabito()
 
+
 let btnEdit = document.querySelector('.botao_editar')
+
+
 
 btnEdit.addEventListener("click", () => sairM())
 
@@ -41,6 +48,7 @@ function sairM() {
     div.appendChild(modal)
     div.style.display="inline"
 }
+
 
 let imagemHeader = document.querySelector(".img_header1")
 let imagemHeader2 = document.querySelector(".img_header2")
@@ -57,3 +65,5 @@ let nome2 = document.querySelector(".nome2")
 
 nome1.innerText = nome
 nome2.innerText = nome
+
+
