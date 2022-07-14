@@ -24,7 +24,7 @@ class criarModal {
                 let descricao = document.getElementById('descricao_criarModal');
                 let categoria = document.getElementById('selecionar_categoriaHabito');
 
-                let bodyNewHabit = {
+                let novoHabito = {
                     habit_title: titulo.value,
                     habit_description: descricao.value,
                     habit_category: categoria.value

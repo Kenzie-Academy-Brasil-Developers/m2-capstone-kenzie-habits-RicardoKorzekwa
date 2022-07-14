@@ -7,6 +7,7 @@ import RenderModal from "../controller/modalEditarHabito.controller.js";
 
 import CriandoDOMHomepage from "../controller/HomepageDOM.controller.js";
 
+criarModal.criarNovoHabito()
 
 const logout = document.querySelector('.botao_logout')
 
