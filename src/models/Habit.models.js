@@ -1,6 +1,6 @@
 export default class Habit{
     static urlBase  = "https://habits-kenzie.herokuapp.com/api/habits"
-    static token    = JSON.parse(localStorage.getItem("@kenzie-habit:token"))
+    static token   = localStorage.getItem('@kenzieHabit-token')
     
     static async criarHabito(habito){
         return await fetch(this.urlBase, {
@@ -20,6 +20,7 @@ export default class Habit{
         return await fetch(this.urlBase, {
             method: "GET",
             headers: {
+                "Content-Type": "application/json",
                 Authorization: `Bearer ${this.token}`
             }
         })
@@ -41,6 +42,7 @@ export default class Habit{
     }
 
     static async atualizarHabito(id, habitoAtualizado){
+        console.log(id)
         return await fetch(`${this.urlBase}/${id}`,{
             method: "PATCH",
             headers: {
@@ -52,6 +54,7 @@ export default class Habit{
         .then(res => res.json())
         .then(res => res)
         .catch(err => console.log(err))
+        .then(res => window.location.reload())
     }
 
     static async completarHabito(id){
@@ -63,7 +66,7 @@ export default class Habit{
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.log(err))
+        .catch(err => console.log(err)).then(()=> window.location.reload())
     }
 
     static async deleteHabito(id){
@@ -75,7 +78,7 @@ export default class Habit{
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.log(err))
+        .catch(err => console.log(err)).then(()=> window.location.reload())
     }
 
 }

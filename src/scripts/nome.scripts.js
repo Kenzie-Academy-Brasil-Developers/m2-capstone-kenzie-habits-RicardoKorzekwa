@@ -9,11 +9,3 @@ logout.addEventListener("click", elem => {
     
 })
 
-const editarPerfil = document.querySelector('.botao_editar')
-console.log(editarPerfil)
-
-editarPerfil.addEventListener("click", elem => {
-    RenderModal.habito()
-    
-    
-})

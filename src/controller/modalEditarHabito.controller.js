@@ -1,8 +1,11 @@
-export default class RenderModal{
+import Habit from "../models/Habit.models.js"
 
-    static habito(){
-        const modal = document.querySelector(".modal")
-        modal.innerHTML = ''
+export default class RenderModal{
+    
+    static  modal = document.querySelector(".modal")
+    
+    static habito(id_habito){
+        
 
         const fundo             = document.createElement('div')
         const container         = document.createElement('div')
@@ -10,6 +13,7 @@ export default class RenderModal{
         const cabecalho         = document.createElement('div')
         const titulo            = document.createElement('h2')
         const btnSair           = document.createElement('button')
+        const form              = document.createElement('form')
         const conteudo          = document.createElement('div')
         const labelTitulo       = document.createElement('label')
         const inputTitulo       = document.createElement('input')
@@ -34,6 +38,7 @@ export default class RenderModal{
         inner.className             = "modal__inner"
         cabecalho.className         = "modal__editarHabito__cabecalho"
         titulo.className            = "modal__editarHabito__titulo"
+        form.id                     = `${id_habito}`
         btnSair.className           = "modal__editarHabito__sair"
         conteudo.className          = "modal__editarHabito__conteudo"
         labelTitulo.className       = "modal__editarHabito__conteudo__labelTitulo"
@@ -47,17 +52,21 @@ export default class RenderModal{
         containerBtn.className      = "modal__editarHabito__butao__acao"
         cancelarBtn.className       = "modal__editarHabito__butao__cancelar"
         salvarBtn.className         = "modal__editarHabito__butao__salvarAlteracoes"
+        form.className              = "form__editarHabito"
 
         inputCheckBox.type          = "checkbox"
+        inputCheckBox.innerText     = "Status"
 
         titulo.innerText            = "Editar hábito"
         btnSair.innerText           = "X"
 
         labelTitulo.innerText       = "Título"
         inputTitulo.type            = "text"
+        inputTitulo.required        = "true"
         inputTitulo.placeholder     = "Digite um título"
 
         labelDescricao.innerText    = "Descrição"
+        labelDescricao.required     = "true"
         inputDescricao.type         = "text"
         inputDescricao.placeholder  = "Digite uma descrição"
         
@@ -69,6 +78,8 @@ export default class RenderModal{
         optionSaude.innerText        = "Saúde"
 
         salvarBtn.innerText          = "Salvar"
+        salvarBtn.type               = "submit"
+
         cancelarBtn.innerText        = "Cancelar"
 
         containerBtn.append(cancelarBtn, salvarBtn)
@@ -77,7 +88,56 @@ export default class RenderModal{
         conteudo.append(labelTitulo, inputTitulo, labelDescricao, inputDescricao, labelCategoria, selectCategoria)
         cabecalho.append(titulo,btnSair)
         inner.append(cabecalho, conteudo, containerBtn)
-        container.append(inner)
+        form.append(inner)
+        container.append(form)
         fundo.append(container)
+        this.modal.append(fundo)
+        this.modal.style.display = "flex"
+        this.fechaModal()
+        this.salvarDados()
+        
+    }
+
+    static fechaModal(){
+
+        const btnSair = document.querySelector(".modal__editarHabito__sair")
+        const btnCancelar = document.querySelector(".modal__editarHabito__butao__cancelar")
+
+        btnSair.addEventListener("click", elem => {
+            this.modal.innerHTML = ''
+            this.modal.style.display = 'none'
+        })
+
+        btnCancelar.addEventListener("click", elem => {
+            this.modal.innerHTML = ''
+            this.modal.style.display = 'none'
+        })
+
+        
+    }
+
+    static salvarDados(){
+        const form           = document.querySelector(".form__editarHabito")
+        const titulo         = document.querySelector(".modal__editarHabito__conteudo__inputTitulo")
+        const descricao      = document.querySelector(".modal__editarHabito__conteudo__inputTDescricao")
+        const categoria      = document.querySelector(".modal__editarHabito__conteudo__select")
+        const btnSalvar      = document.querySelector(".modal__editarHabito__butao__salvarAlteracoes")
+        
+        btnSalvar.addEventListener("click", event => {
+            
+            event.preventDefault()
+            const dadosFormatados = {
+                habit_title: titulo.value,
+                habit_description: descricao.value,
+                habit_category: categoria.value
+            }
+            if(dadosFormatados.habit_title !== "" && dadosFormatados.habit_description){
+                Habit.atualizarHabito(form.id, dadosFormatados)
+            }else{
+                this.modal.innerHTML = ''
+                this.modal.style.display = 'none'
+            }
+            
+        })
     }
 }

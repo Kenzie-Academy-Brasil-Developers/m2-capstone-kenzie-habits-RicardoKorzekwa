@@ -42,6 +42,7 @@
     font-size: 18px;
     font-weight: 500;
     color: var(--grey-3);
+    cursor: pointer;
 }
 /* conteudo */
 .modal__editarHabito__conteudo{
@@ -109,6 +110,7 @@
     width: 43%;
     font: var(--Title-5);
     color: var(--grey-2);
+    cursor: pointer;
 }
 .modal__editarHabito__butao__salvarAlteracoes{
     border: none;
@@ -117,4 +119,5 @@
     color: var(--branco);
     width: 56%;
     font: var(--Title-5);
+    cursor: pointer;
 }
