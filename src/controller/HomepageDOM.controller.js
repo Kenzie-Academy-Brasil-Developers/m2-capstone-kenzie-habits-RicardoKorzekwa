@@ -1,4 +1,5 @@
 import Habit from "../models/Habit.models.js"
+import RequisicaoLogin from "./LoginRequisicao.controller.js"
 
 
 
@@ -57,19 +58,12 @@ export default class CriandoDOMHomepage{
         divContainer.append(divInner)
         
 
-        form.addEventListener("submit", async (event)=>{
+        form.addEventListener("submit", (event)=>{
             event.preventDefault()
-            await Habit.editarPerfil({
-                usr_name : inputNome.value,
+             Habit.editarPerfil({
                 usr_image: inputImg.value
             })
-            .then(imgHeader1.src = inputImg.value,
-                imgHeader2.src = inputImg.value,
-                user1.innerHTML="",
-                user2.innerHTML= "")
-            .then(user1.insertAdjacentHTML("afterbegin", inputNome.value),
-                  user2.insertAdjacentHTML("afterbegin", inputNome.value))
-
+            .then(location.reload())
            })
         
        
