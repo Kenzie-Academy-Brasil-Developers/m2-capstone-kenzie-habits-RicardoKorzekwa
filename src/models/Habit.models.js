@@ -82,17 +82,17 @@ export default class Habit{
     }
 
     static async editarPerfil(perfilAtualizado){
+        console.log(perfilAtualizado)
         return await fetch("https://habits-kenzie.herokuapp.com/api/user/profile",{
-            method: "POST",
+            method: "PATCH",
             headers:{
                 "Content-Type"  : "application/json",
                 Authorization: `Bearer ${this.token}`
             },
             body:JSON.stringify(perfilAtualizado)
         })
-        .then(perfilAtualizado => JSON.parse(perfilAtualizado))
-        .then(window.localStorage.setItem("@kenzieHabit-username", perfilAtualizado.usr_name),
-              window.localStorage.setItem("@kenzieHabit-image",perfilAtualizado.usr_image)  )
+        .then(perfilAtualizado => perfilAtualizado.json())
+        .then(perfilAtualizado => window.localStorage.setItem("@kenzieHabit-image",perfilAtualizado.usr_image)  )
         .catch(err => console.log(err))
     }
 
