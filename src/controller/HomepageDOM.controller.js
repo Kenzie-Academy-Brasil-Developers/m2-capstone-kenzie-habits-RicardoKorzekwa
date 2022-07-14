@@ -5,9 +5,9 @@ import RequisicaoLogin from "./LoginRequisicao.controller.js"
 
 export default class CriandoDOMHomepage{
 
-    static modalEditarPerfil(htmlModal){
+    static modalEditarPerfil(){
         
-        const sair1 = document.getElementById("modalEditar")
+        const sair1 = document.getElementById("modal")
 
         const divContainer= document.createElement("div")
         divContainer.classList.add("modalContainer")
@@ -60,10 +60,9 @@ export default class CriandoDOMHomepage{
 
         form.addEventListener("submit", (event)=>{
             event.preventDefault()
-             Habit.editarPerfil({
+            Habit.editarPerfil({
                 usr_image: inputImg.value
             })
-            .then(location.reload())
            })
         
        

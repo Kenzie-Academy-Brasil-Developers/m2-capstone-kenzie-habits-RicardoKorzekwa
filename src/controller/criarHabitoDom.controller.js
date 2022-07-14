@@ -46,18 +46,23 @@ export default class Modal {
 
         const selecionarCategoria1 = document.createElement('option')
         selecionarCategoria1.innerText = "💜 Saúde"
+        
 
         const selecionarCategoria2 = document.createElement('option')
-        selecionarCategoria2.innerText = "✏️ Estudo"
+        selecionarCategoria2.innerText = "✏️ Estudos"
+        
 
         const selecionarCategoria3 = document.createElement('option')
         selecionarCategoria3.innerText = "🏠 Casa"
+        
 
         const selecionarCategoria4 = document.createElement('option')
         selecionarCategoria4.innerText = "💼 Trabalho"
+        
 
         const selecionarCategoria5 = document.createElement('option')
         selecionarCategoria5.innerText = "⛵ Lazer"
+        
 
         const create__submitButton = document.createElement('button')
         create__submitButton.setAttribute('id', 'create__submitButton')

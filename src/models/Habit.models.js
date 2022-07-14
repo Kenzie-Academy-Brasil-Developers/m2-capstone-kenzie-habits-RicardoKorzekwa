@@ -13,6 +13,7 @@ export default class Habit{
         })
         .then(res => res.json())
         .then(res => res)
+        .then(res => location.reload())
         .catch(err => console.log(err))
     }
 
@@ -92,7 +93,10 @@ export default class Habit{
             body:JSON.stringify(perfilAtualizado)
         })
         .then(perfilAtualizado => perfilAtualizado.json())
-        .then(perfilAtualizado => window.localStorage.setItem("@kenzieHabit-image",perfilAtualizado.usr_image)  )
+        .then(perfilAtualizado => {
+            console.log(perfilAtualizado)
+            window.localStorage.setItem("@kenzieHabit-image",perfilAtualizado.usr_image)})
+        .then(res => location.reload())
         .catch(err => console.log(err))
     }
 
