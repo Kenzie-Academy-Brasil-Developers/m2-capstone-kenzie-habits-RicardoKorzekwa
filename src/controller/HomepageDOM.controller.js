@@ -26,6 +26,7 @@ export default class CriandoDOMHomepage{
         buttonModal.setAttribute("id", "modalEditarButton")
         buttonModal.insertAdjacentHTML("afterbegin", "X")
 
+        buttonModal.addEventListener("click", ()=> { window.location.reload()})
         
 
         const form = document.createElement("form")
@@ -60,9 +61,27 @@ export default class CriandoDOMHomepage{
 
         form.addEventListener("submit", (event)=>{
             event.preventDefault()
-            Habit.editarPerfil({
-                usr_image: inputImg.value
-            })
+            if(inputImg.value != "" && inputNome.value != ""){
+                window.localStorage.setItem("@kenzieHabit-username",inputNome.value)
+
+                Habit.editarPerfil({
+                    usr_image: inputImg.value,
+
+                    usr_name: inputNome.value
+                })
+            }else if(inputImg.value != ""){
+
+                Habit.editarPerfil({
+                    usr_image: inputImg.value,
+                })
+            }else if(inputNome.value != ""){
+                window.localStorage.setItem("@kenzieHabit-username",inputNome.value)
+                Habit.editarPerfil({
+                    usr_name: inputNome.value,
+                })
+            }
+
+            
            })
         
        
@@ -74,4 +93,6 @@ export default class CriandoDOMHomepage{
         return divContainer
 
     }
+
 }
+

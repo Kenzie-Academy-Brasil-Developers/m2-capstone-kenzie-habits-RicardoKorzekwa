@@ -21,8 +21,8 @@ logout.addEventListener("click", elem => {
 })
 
 let arrHabitos = await Habit.listarTodosHabitos()
-let arrHabitosFinal= []
-let arrHabitosFalse =[]
+let arrHabitosFinal = []
+let arrHabitosFalse = []
 
  arrHabitos.forEach((elem) => {
      if(elem.habit_status != true){arrHabitosFinal.push(elem)}else{
