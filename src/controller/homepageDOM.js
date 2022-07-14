@@ -14,6 +14,7 @@ export default class CriarTabela {
          section.appendChild(table)
     }
 
+    
 
     static cabecalho(){
 
@@ -69,14 +70,20 @@ export default class CriarTabela {
             thDescricao.innerText =arr[i].habit_description
 
             let thCategoria = document.createElement("th")
-            thCategoria.innerText= arr[i].habit_category
+            let span = document.createElement("span")
+            span.innerText= arr[i].habit_category
+            span.classList.add("categoria")
+            thCategoria.appendChild(span)
+            
 
             let thEditar = document.createElement("th")
             thEditar.innerText = "°°°"
             thEditar.id = arr[i].habit_id
             thEditar.classList.add("cursor")
 
+
             thEditar.addEventListener("click", () => RenderModal.habito(arr[i].habit_id))
+
 
             tr.append(thStatus, thTitulo, thDescricao, thCategoria, thEditar)
             tbody.appendChild(tr)
