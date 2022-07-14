@@ -13,6 +13,7 @@ export default class CriarTabela {
          section.appendChild(table)
     }
 
+    
 
     static cabecalho(){
 
