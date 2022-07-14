@@ -1,4 +1,5 @@
 import Habit from "../models/Habit.models.js"
+import RenderModal from "./modalEditarHabito.controller.js"
 
 export default class CriarTabela {
     static tabela(idSection) {
@@ -6,10 +7,11 @@ export default class CriarTabela {
         let table = document.createElement("table")
         table.classList.add("table")
         table.id ="table"
-
+        let tbody = document.createElement("tbody")
+        tbody.id="tbody"
        let cabecalho = this.cabecalho()
 
-        table.appendChild(cabecalho)
+        table.append(cabecalho,tbody)
          section.appendChild(table)
     }
 
@@ -45,7 +47,7 @@ export default class CriarTabela {
 
     static bodyTabela(arr, idTabela){
         let tabela = document.getElementById(idTabela)
-        let tbody = document.createElement("tbody")
+        let tbody = document.getElementById("tbody")
         for(let i=0; i<arr.length; i++){
             let tr = document.createElement("tr")
 
@@ -79,6 +81,10 @@ export default class CriarTabela {
             thEditar.innerText = "°°°"
             thEditar.id = arr[i].habit_id
             thEditar.classList.add("cursor")
+
+
+            thEditar.addEventListener("click", () => RenderModal.habito(arr[i].habit_id))
+
 
             tr.append(thStatus, thTitulo, thDescricao, thCategoria, thEditar)
             tbody.appendChild(tr)
