@@ -361,4 +361,17 @@ button:hover{
 
 }
 
-
+@media screen and (max-width: 500px) {
+    .modal{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .modalInner{
+        width: 250px;
+        padding: 10px 10px 0 0;
+    }
+}
