@@ -30,9 +30,11 @@ export default class CriarTabela {
         thTitulo.innerText="Título"
 
         let thDescricao = document.createElement("th")
+        thDescricao.className = 'excluir'
         thDescricao.innerText = "Descrição"
 
         let thCategoria = document.createElement("th")
+        thCategoria.className = 'excluir'
         thCategoria.innerText = "Categoria"
 
         let thEditar = document.createElement("th")
@@ -68,10 +70,12 @@ export default class CriarTabela {
             if(arr[i].habit_status != false){thTitulo.classList.add("check")}
 
             let thDescricao = document.createElement("th")
-            thDescricao.innerText =arr[i].habit_description
+            thDescricao.className = 'excluir'
+            thDescricao.innerText = arr[i].habit_description
 
             let thCategoria = document.createElement("th")
             let span = document.createElement("span")
+            thCategoria.className = 'excluir'
             span.innerText= arr[i].habit_category
             span.classList.add("categoria")
             thCategoria.appendChild(span)

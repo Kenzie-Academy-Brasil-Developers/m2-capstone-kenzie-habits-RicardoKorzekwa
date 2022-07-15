@@ -111,7 +111,37 @@
     filter: brightness(1.2);
 }
 
+@media screen and (max-width: 500px) {
 
+    .modal__delete__butao__acao{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 13px;
+    
+    }
+    .modal__delete__butao__cancelar{
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--grey-5);
+        width: 100%;
+        font: var(--Text-2-500);
+        
+    }
+
+    .modal__delete__butao__excluir{
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--error-1);
+        color: var(--branco);
+        width: 100%;
+        font: var(--Text-2-400);
+    }
+
+}
 
 
 

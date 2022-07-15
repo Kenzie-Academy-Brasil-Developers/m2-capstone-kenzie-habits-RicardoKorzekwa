@@ -1,8 +1,24 @@
+/*
+     320px => CELULARES PEQUENO PORTE
+     586px => CELULARES MÉDIO PORTE
+     768px => TABLET
+     992px => DESKTOP PEQUENO / TABLET GRANDE
+    1200px => DESKTOP
+    1440px => DESKTOP GRANDE
+*/
+
 body {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     font-family: Inter;
-    
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        height: 100%;
+        width: 100%;
+        font-family: Inter;
+    }
 }
 
 header {
@@ -13,7 +29,7 @@ header {
 .section_header1 {
     display: flex;
     flex-direction: row;
-    height: 3.625rem;
+    height: 4rem;
     width: 100%;
     background-color: var(--branco);
     align-items: center;
@@ -62,32 +78,74 @@ main {
 
 .section_main {
     display: flex;
-    width: 70%;
+    width: 86%;
     flex-direction: column;
     align-items: center;
 }
 
+@media screen and (min-width: 480px) {
+    .section_main {
+        display: flex;
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .excluir {
+        display: none;
+    }
+}
+
+
 .nav {
     display: flex;
     width: 100%;
-    margin-top: 1.813rem;
+    margin-top: 1.8rem;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 15px;
 }
 
-.nav>div {
-    display: flex;
-    gap: 10px;
+@media screen and (max-width: 480px) {
+    .nav {
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
 }
 
-.nav>div>button {
-    border: none;
+.nav_h2{
+    font: var(--Title-2);
+    margin-top: 8px;
+}
+
+.nav>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnfiltro{
     background-color: transparent;
-    font-size: 16px;
-    cursor: pointer;
-    height: 30px;
-    font-weight: 600;
+    border: none;
+    font: var(--Text-2-500);
+    color: var(--grey-2);
+
+}
+
+.botao_criar{
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 3rem;
+    background-color: var(--brand-1);
+
+    font: var(--Text-2-500);
+    color: var(--branco);
 }
 
 .nav>div>button:hover {
@@ -105,24 +163,34 @@ main {
     width: 100%;
     font-size: 60px;
     text-align: center;
+    margin-bottom: 3rem;
+
+    /* display: none; */
 }
+
 .table > thead > tr{
     border: 1px solid var(--grey-3);
     color: var(--grey-2);
 }
+
 .table > thead > tr > th{
     padding: 10px 0;
     text-align: center;
     justify-content: center;
+
 }
+
 .table > tbody > tr{
     border: 1px solid var(--grey-3);
 }
+
 .table > tbody > tr > th{
     padding: 5px 0;
     text-align: center;
     justify-content: center;
+    
 }
+
 .categoria{
     background-color: var(--brand-3);   
     font-size: 15px;
@@ -184,6 +252,8 @@ main {
     display: block;
 }
 
+/* Modal Editar Perfil */
+
 .modalEditar{
     display: none; 
     width: 100vw;
@@ -205,7 +275,7 @@ main {
 .modalInner {
     background-color: var(--grey-6);
     width: 25%;
-    max-width: 100%;
+    max-width: 90%;
     min-height: 30%;
     border-radius: 5px;
     overflow: hidden;
@@ -269,4 +339,26 @@ button:hover{
 .cursor{
     cursor: pointer;
 }
+
+
+.button__carregar{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+
+}
+
+.button__carregar__mais{
+    background-color: var(--brand-1);
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    color: var(--branco);
+    font: var(--Text-3-400);
+
+}
+
 

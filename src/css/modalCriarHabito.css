@@ -15,7 +15,7 @@
 .modal_habito {
     background-color: var(--branco);
     width: 500px;
-    max-width: 100%;
+    max-width: 90%;
     height: 500px;
     border-radius: 8px;
     overflow: hidden;
