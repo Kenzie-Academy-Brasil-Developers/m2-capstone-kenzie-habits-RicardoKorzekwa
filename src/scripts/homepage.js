@@ -58,10 +58,10 @@ let btnEdit = document.querySelector('.botao_editar')
 
 btnEdit.addEventListener("click", () => sairM())
 
-const div = document.getElementById("modalEditar")
+const div = document.querySelector(".modal")
 
 function sairM() {
-    div.innerHTML=""
+    div.innerHTML = ""
     let modal = CriandoDOMHomepage.modalEditarPerfil()
     div.appendChild(modal)
     div.style.display="inline"
